@@ -20,3 +20,5 @@ This code was contributed by [KAZ](https://twitter.com/yokazuya_jp).
 ![action shot](https://community.theta360.guide/uploads/default/original/2X/8/86af3018cea11ecf7c3915585a608262b0d8969d.png)
 
 Action shot of plug-in in use by Kaz, the developer
+
+![Analytics](https://ga-beacon.appspot.com/UA-73311422-5/motion-sensor)
