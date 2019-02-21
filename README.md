@@ -10,6 +10,6 @@ English article on community.theta360.guide.
 * RICOH THETA camera must be in developer mode.  Go to the forum above and ask a question if you need help with this.
 * install the plugin with adb
     adb install plugin-name.apk
-* you may need to set permissions with Vysor
+* set permissions with Vysor
 * use Android Studio logcat to see sensor values
 * shake camera to take picture
