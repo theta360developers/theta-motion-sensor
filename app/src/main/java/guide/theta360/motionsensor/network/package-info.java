@@ -14,16 +14,7 @@
  * limitations under the License.
  */
 
-package com.theta360.pluginapplication.model;
-
 /**
- * Indicates the rotation inertia
+ * Package storing Android HTTP communication program
  */
-public enum RotateInertia {
-    /** none */
-    INERTIA_0,
-    /** weak */
-    INERTIA_50,
-    /** strong */
-    INERTIA_100,;
-}
+package guide.theta360.motionsensor.network;

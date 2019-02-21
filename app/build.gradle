@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.theta360.pluginapplication"
+        applicationId "com.theta360.motionsensor"
         minSdkVersion 25
         targetSdkVersion 25
         versionCode 6

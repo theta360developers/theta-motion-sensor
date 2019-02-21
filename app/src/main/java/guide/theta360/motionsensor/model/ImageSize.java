@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 
-package com.theta360.pluginapplication.network;
+package guide.theta360.motionsensor.model;
 
 /**
- * HTTP communication download listener class
+ * Image size type
  */
-public interface HttpDownloadListener {
-    /**
-     * Total byte count
-     */
-    void onTotalSize(long totalSize);
-    /**
-     * Received byte count
-     */
-    void onDataReceived(int size);
+public enum ImageSize {
+    /** 2048x1024 */
+    IMAGE_SIZE_2048x1024,
+
+    /** 5376x2688 */
+    IMAGE_SIZE_5376x2688
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.theta360.pluginapplication.model;
+package guide.theta360.motionsensor.model;
 
 import android.graphics.Bitmap;
 

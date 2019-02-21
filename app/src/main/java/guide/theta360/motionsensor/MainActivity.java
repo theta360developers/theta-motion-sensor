@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package com.theta360.pluginapplication;
+package guide.theta360.motionsensor;
 
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import com.theta360.pluginapplication.AccelerationSensor.AccelerationGraSensor;
-import com.theta360.pluginapplication.task.TakePictureTask;
-import com.theta360.pluginapplication.task.TakePictureTask.Callback;
+import guide.theta360.motionsensor.AccelerationSensor.AccelerationGraSensor;
+
+import guide.theta360.motionsensor.R;
+
+import guide.theta360.motionsensor.task.TakePictureTask;
+
 import com.theta360.pluginlibrary.activity.PluginActivity;
 import com.theta360.pluginlibrary.callback.KeyCallback;
 import com.theta360.pluginlibrary.receiver.KeyReceiver;
@@ -34,7 +37,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends PluginActivity {
-    private TakePictureTask.Callback mTakePictureTaskCallback = new Callback() {
+    private TakePictureTask.Callback mTakePictureTaskCallback = new TakePictureTask.Callback() {
         @Override
         public void onTakePicture(String fileUrl) {
 

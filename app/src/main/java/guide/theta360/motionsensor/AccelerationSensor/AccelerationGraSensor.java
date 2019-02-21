@@ -1,12 +1,10 @@
-package com.theta360.pluginapplication.AccelerationSensor;
+package guide.theta360.motionsensor.AccelerationSensor;
 
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-
-import java.util.List;
 
 public class AccelerationGraSensor implements SensorEventListener {
 
