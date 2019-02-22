@@ -23,8 +23,7 @@ import android.view.KeyEvent;
 
 import guide.theta360.motionsensor.AccelerationSensor.AccelerationGraSensor;
 
-import guide.theta360.motionsensor.R;
-
+import guide.theta360.motionsensor.sensors.OrientationSensor;
 import guide.theta360.motionsensor.task.TakePictureTask;
 
 import com.theta360.pluginlibrary.activity.PluginActivity;
@@ -49,6 +48,9 @@ public class MainActivity extends PluginActivity {
     private SensorManager graSensorManager;
     private AccelerationGraSensor accelerationGraSensor;
 
+    private SensorManager orientationSensorManager;
+    private OrientationSensor orientationSensor;
+
     private static final int ACCELERATION_INTERVAL_PERIOD = 1000;
     private Timer timer;
     private static final float ACCELERATION_THRESHOLD = 3.0f;
@@ -62,6 +64,9 @@ public class MainActivity extends PluginActivity {
         //加速度を取れる状態に設定
         graSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         accelerationGraSensor = new AccelerationGraSensor(graSensorManager);
+
+        orientationSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        orientationSensor = new OrientationSensor(orientationSensorManager);
 
         // Set enable to close by pluginlibrary, If you set false, please call close() after finishing your end processing.
         setAutoClose(true);
@@ -104,16 +109,23 @@ public class MainActivity extends PluginActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                // 加速度のログを出力
-                Log.d("accelerX", String.valueOf(accelerationGraSensor.getX()));
-                Log.d("accelerY", String.valueOf(accelerationGraSensor.getY()));
-                Log.d("accelerZ", String.valueOf(accelerationGraSensor.getZ()));
+//                // 加速度のログを出力
+//                Log.d("accelerX", String.valueOf(accelerationGraSensor.getX()));
+//                Log.d("accelerY", String.valueOf(accelerationGraSensor.getY()));
+//                Log.d("accelerZ", String.valueOf(accelerationGraSensor.getZ()));
 
                 if (Math.abs(accelerationGraSensor.getX()) > ACCELERATION_THRESHOLD ||
                         Math.abs(accelerationGraSensor.getY()) > ACCELERATION_THRESHOLD ||
                         Math.abs(accelerationGraSensor.getZ()) > ACCELERATION_THRESHOLD) {
-                    new TakePictureTask(mTakePictureTaskCallback).execute();
+//                    new TakePictureTask(mTakePictureTaskCallback).execute();
+                    Log.d("ACCELEROMETER", "uncomment line to take picture");
                 }
+
+                Log.d("ORIENTATION", "Azimuth: " + String.valueOf(orientationSensor.getOrientation()[0]));
+                Log.d("ORIENTATION", "Pitch: " + String.valueOf(orientationSensor.getOrientation()[1]));
+                Log.d("ORIENTATION", "Roll: " + String.valueOf(orientationSensor.getOrientation()[2]));
+
+
 //
             }
         }, 0, ACCELERATION_INTERVAL_PERIOD);
